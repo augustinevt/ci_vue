@@ -2,6 +2,7 @@
   <div >
     <Options  @run-system="toggleSystem"  />
     <Display :runSystem="runSystemValue"  />
+
   </div>
 </template>
 
@@ -19,9 +20,12 @@
       Display
     },
     data: () => ({
-      runSystemValue: false
+      runSystemValue: false,
+      myBaby: 'is Fred'
     }),
+    computed: {
 
+    },
     methods: {
 
       toggleSystem(val) {

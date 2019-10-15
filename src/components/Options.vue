@@ -5,15 +5,29 @@
 </template>
 
 <script>
+
+  import {mapState, mapActions} from 'vuex'
+
   export default {
     name: 'Options',
     data: () => ({
-      runSystemValue: false,
+
     }),
+
+    computed: {
+      ...mapState({runSystemValue: 'systemRunValue'})
+    },
+
     methods: {
+      ...mapActions([
+        'toggleSystemRunState'
+      ]),
+
       onStart() {
-        this.$emit('run-system', !this.runSystemValue)
-        this.runSystemValue = !this.runSystemValue
+
+        this.toggleSystemRunState()
+        // this.$emit('run-system', !this.runSystemValue)
+        // this.runSystemValue = !this.runSystemValue
       }
     }
   }

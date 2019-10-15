@@ -7,11 +7,10 @@
 <script>
 
   import System from 'basic-system'
+  import {mapState} from 'vuex'
+
   export default {
     name: 'Display',
-    props: {
-      runSystem: Boolean
-    },
     methods: {
       displayAgent(agent) {
         const {ctx} = this.provider
@@ -65,6 +64,11 @@
         }
       }
     },
+
+    computed: {
+      ...mapState({runSystem: 'systemRunValue'})
+    },
+
     watch: {
       runSystem: function() {
         this.runSystem ? this.startSystem() : this.stopSystem()
