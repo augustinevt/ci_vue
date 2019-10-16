@@ -40,8 +40,8 @@ jobs:
       - run: npm run build
 
       - aws-s3/sync:
-          from: build
-          to: 's3://ci-react/'
+          from: dist
+          to: 's3://vue-ci/'
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400"
