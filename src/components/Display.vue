@@ -6,7 +6,7 @@
 
 <script>
 
-  import System from 'basic-system'
+  // import System from 'basic-system'
   import {mapState} from 'vuex'
 
   export default {
@@ -76,17 +76,14 @@
     },
 
     mounted() {
-      this.provider.ctx = this.$refs['display-canvas'].getContext('2d')
-
-      const sys = new System(100,100)
-
-      sys.initGrid()
-      sys.setAgentDisplay(this.displayAgent)
-
-      this.system = sys
-
-      // this.$refs['display-canvas'].width = this.$refs['display-canvas'].parentElement.clientWidth
-      // this.$refs['display-canvas'].height = this.$refs['display-canvas'].parentElement.clientHeight
+      // this.provider.ctx = this.$refs['display-canvas'].getContext('2d')
+      //
+      // const sys = new System(100,100)
+      //
+      // sys.initGrid()
+      // sys.setAgentDisplay(this.displayAgent)
+      //
+      // this.system = sys
     }
   }
 </script>
